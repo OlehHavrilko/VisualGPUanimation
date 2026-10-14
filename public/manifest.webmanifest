@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "DieDive",
-  "short_name": "DieDive",
+  "name": "Visual GPU Animation",
+  "short_name": "VisualGPU",
   "description": "An interactive WebGL dive from a GeForce RTX 5090 down to a single silicon atom. Eight scales, one continuous camera move.",
   "start_url": "./",
   "scope": "./",

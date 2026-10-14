@@ -1,4 +1,4 @@
-# DieDive — mobile layout pass
+# Visual GPU Animation — mobile layout pass
 
 Дата: октябрь 2026. Ветка `mobile-ui-a11y`. Разбор сделан по коду и по живой сборке:
 `lint`, `format:check`, `typecheck`, `npm test` (48/48), `npm run build`. Геометрия мобильного UI измерена
