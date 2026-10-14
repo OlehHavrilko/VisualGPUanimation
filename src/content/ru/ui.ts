@@ -16,7 +16,7 @@ export const ui: typeof en = {
   traceStage: (i: number, n: number, kind: string) => `Трасса ${i}/${n} · ${kind}`,
   follow: 'Трасса',
   static: {
-    docTitle: 'DieDive',
+    docTitle: 'Visual GPU Animation',
     docDescription: '3D-разбор видеокарты на прокрутке: от кожуха до одного атома кремния и кварков в его ядре.',
     brand: 'АТОМ',
     language: 'Язык',
