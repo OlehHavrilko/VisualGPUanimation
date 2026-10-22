@@ -161,6 +161,8 @@ test('Trace journey: one route from chip 11, tracer is visible, F stops it', asy
 });
 
 test('levels release GPU resources when swapped out', async ({ page }) => {
+  // 17 level builds back to back: on SwiftShader that alone can pass the 240 s default.
+  test.setTimeout(600_000);
   const errors = await openApp(page);
   const settle = () => page.evaluate(() => (window as any).__teardown.manager.whenIdle());
   const mem = () => page.evaluate(() => ({ ...(window as any).__teardown.renderer.info.memory }));
