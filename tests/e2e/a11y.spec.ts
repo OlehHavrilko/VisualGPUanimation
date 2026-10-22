@@ -9,6 +9,13 @@ import { expectNoErrors, goToLevel, openApp } from './helpers';
  */
 
 async function audit(page: Page, include?: string) {
+  // Let fades settle first: axe blends colours through opacity, so a HUD caught mid-transition
+  // (e.g. fading out as the finale opens) reads as ~1:1 contrast. Endless loops are left alone.
+  await page.evaluate(() => {
+    const finite = document.getAnimations().filter((a) => a.effect?.getComputedTiming().endTime !== Infinity);
+    const done = Promise.all(finite.map((a) => a.finished.catch(() => undefined)));
+    return Promise.race([done, new Promise((r) => setTimeout(r, 5000))]);
+  });
   let axe = new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']);
   if (include) axe = axe.include(include);
   const { violations } = await axe.analyze();
