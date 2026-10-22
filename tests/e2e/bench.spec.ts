@@ -5,8 +5,8 @@ import { goToLevel, openApp } from './helpers';
 /**
  * Level activation benchmark: walks 1 -> 9 and back 9 -> 1, recording what the LevelProfiler
  * measured for every swap. Only runs with BENCH=<label>; writes bench/<label>.{json,md}.
- *   BENCH=after npx playwright test bench
- *   BENCH=baseline BENCH_QUERY='&cache=0' npx playwright test bench   (level cache off)
+ *   BENCH=after npx playwright test tests/e2e/bench
+ *   BENCH=baseline BENCH_QUERY='&cache=0' npx playwright test tests/e2e/bench   (level cache off)
  * Numbers from SwiftShader are CPU-bound: compare runs against each other, not against a GPU.
  */
 const label = process.env.BENCH;
